@@ -21,7 +21,6 @@ import retrofit2.http.Query;
 
 public interface APIInterface {
 
-
     // POST
     // Must have body
     @POST(AllUrl.SIGN_UP)
@@ -30,13 +29,11 @@ public interface APIInterface {
             @Header(AllUrl.ACCEPT) String he_token,
             @Body HashMap<String, String> user);
 
-
     // GET
     @GET(AllUrl.USER_LIST)
     Call<UserListModel> getUserList(
             @Header(AllUrl.CONTENT_TYPE) String he_clint,
             @Header(AllUrl.ACCEPT) String he_token);
-
 
     // PUT
     @PUT(AllUrl.UPDATE_USER)
@@ -46,14 +43,12 @@ public interface APIInterface {
             @Body HashMap<String, Object> map,
             @Path("user_id") int user_id);
 
-
     // QUERY
     @GET(AllUrl.SEARCH_USER)
     Call<UserSearchModel> keyword(
             @Header(AllUrl.CONTENT_TYPE) String he_clint,
             @Header(AllUrl.ACCEPT) String he_token,
             @Query("keyword") String keyword);
-
 
     // DELETE
     @DELETE(AllUrl.DELETE_USER)
